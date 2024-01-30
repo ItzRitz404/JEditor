@@ -24,7 +24,7 @@ import Utility.ImageLoader;
 public class FileMenu extends CMenu{
 	
 	private static final long serialVersionUID = 1L;
-	public static CMenuItem newTab,open,openWeb,reload,save,saveAs,close,closeAll,print,exit;
+	public static CMenuItem newTab,openProject,openWeb,reload,save,saveAs,close,closeAll,print,exit;
 	public static CMenu recentFiles = new CMenu("Recent files", 'R'); 
 
 	public FileMenu(String text, char Mnmonic) {
@@ -45,7 +45,7 @@ public class FileMenu extends CMenu{
 	
 	public void init(){
 		newTab = new CMenuItem("New Tab", "open a new tab", 'N', KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_DOWN_MASK));
-		open = new CMenuItem("Open", "open a new file", 'O', KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
+		openProject = new CMenuItem("Open Project", "open a new file", 'O', KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
 		openWeb = new CMenuItem("Open web html ..", "open the website as html in the editor", 'W', null);
 		reload = new CMenuItem("Reload", "reload the current file", 'R', KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_DOWN_MASK));
 		save = new CMenuItem("Save", "save the current file", 'S', KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
@@ -58,7 +58,7 @@ public class FileMenu extends CMenu{
 
 	public void addToMenu(){
 		add(newTab);
-		add(open);
+		add(openProject);
 		add(openWeb);
 		add(recentFiles);
 		add(reload);
@@ -76,7 +76,7 @@ public class FileMenu extends CMenu{
 	
 	public void addIcons(){
 		newTab.setIcon(ImageLoader.loadImage("images_small/newtab.png"));
-		open.setIcon(ImageLoader.loadImage("images_small/open.gif"));
+		openProject.setIcon(ImageLoader.loadImage("images_small/openProject.gif"));
 		reload.setIcon(ImageLoader.loadImage("images_small/reload.png"));
 		save.setIcon(ImageLoader.loadImage("images_small/save.png"));
 		saveAs.setIcon(ImageLoader.loadImage("images_small/saveas.png"));
@@ -93,7 +93,7 @@ public class FileMenu extends CMenu{
 			}
 		});
 		
-		open.addActionListener(new ActionListener() {
+		openProject.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
