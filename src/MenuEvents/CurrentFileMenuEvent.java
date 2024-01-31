@@ -20,12 +20,11 @@ public class CurrentFileMenuEvent implements MenuListener{
 		if(CTabbedPane.getInstance().getPanel().getCurrentFilePath() == null){
 			CurrentFileMenu.delete.setEnabled(false);
 			CurrentFileMenu.details.setEnabled(false);
-			setBackground(Color.GREEN)
+			
 		}
 		else{
 			CurrentFileMenu.delete.setEnabled(true);
 			CurrentFileMenu.details.setEnabled(true);
-			setBackground(Color.GREEN)
 		}
 		
 	}
